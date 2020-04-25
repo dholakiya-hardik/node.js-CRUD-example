@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../components/head %>
+</head>
+<body class="container">  
+  <main>
+    <div class="card">
+      <div class="card-header">
+            <%- include('../components/header', {activeMenu: 'customeList'}); %>
+      </div>
+      <div class="card-body">
+        <div>
+          <% if (messages.success) { %>
+            <p class="alert alert-success mt-4"><%- messages.success %></p>
+        <% } %>  
+        </div>   
+         
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th width="200px">Action</th>
+           
+            </tr>
+          </thead>
+          <tbody>
+            <% if(data.length){
+           
+            for(var i = 0; i< data.length; i++) {%>  
+            <tr>
+              <th scope="row"><%= (i+1) %></th>
+              <td><%= data[i].name%></td>
+              <td><%= data[i].email%></td>
+              <td>
+              <a class="btn btn-primary edit" href="../customer/edit/<%=data[i].id%>">Edit</a>                       
+              <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../customers/delete/<%=data[i].id%>">Delete</a>                       
+             </td>
+            </tr>
+            <% }
+                     
+             }else{ %>
+                 <tr>
+                    <td colspan="3">No user</td>
+                 </tr>
+              <% } %>    
+            
+          </tbody>
+          </table>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+      <% include ../components/footer %>
+  </footer>
+
+</body>
+</html>

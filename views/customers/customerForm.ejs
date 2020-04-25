@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../components/head %>
+</head>
+<body class="container">
+  <main>
+    <div class="card">
+      <div class="card-header">
+        <%- include('../components/header', {activeMenu: id?'':'customeAdd',}); %>
+      </div>
+      <div class="card-body">
+        <div>
+          <% if (messages.error) { %>
+            <p style="color:red"><%- messages.error %></p>
+          <% } %>
+            
+          <% if (messages.success) { %>
+              <p style="color:green"><%- messages.success %></p>
+          <% } %>
+        </div>
+
+        <form action="<%= id ? '/customer/update/'+id : '/customer/add' %>" method="post" name="customer form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<%= name %>">
+          </div>          
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" idaria-describedby="emailHelp" value="<%= email %>" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <% include ../components/footer %>
+  </footer>
+</body>
+</html>

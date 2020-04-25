@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./components/head %>
+</head>
+<body class="container">
+<main>
+    <div class="card">
+      <div class="card-header">
+        <%- include('components/header', {activeMenu: 'home'}); %>
+      </div>
+      <div class="card-body text-center">
+            <div class="jumbotron">
+                <h1>Welcome to Node.js CRUD exmaple</h1>
+                <p>Here I taken customer exmaple, You can add, update, delete and get customer list.</p>
+            </div>
+      </div>
+    </div>
+  </main>
+<footer>
+    <% include ./components/footer %>
+</footer>
+
+</body>
+</html>
