@@ -6,9 +6,6 @@ var logger = require('morgan');
 var flash = require('express-flash');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var mysql = require('mysql');
-var connection  = require('./helper/dbConnection');
-
 var customersRouter = require('./routes');
 
 console.log("in app js")
@@ -37,6 +34,7 @@ app.use(flash());
 const port = 3000
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 var router = require('./routes');
+require('./models/mongoose.connection')
 app.use(router);
 app.use(function(req, res, next){
     res.status(404);  

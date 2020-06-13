@@ -7,7 +7,7 @@
   <main>
     <div class="card">
       <div class="card-header">
-            <%- include('../components/header', {activeMenu: 'customeList'}); %>
+            <%- include('../components/header', {activeMenu: 'userList'}); %>
       </div>
       <div class="card-body">
         <div>
@@ -35,15 +35,15 @@
               <td><%= data[i].name%></td>
               <td><%= data[i].email%></td>
               <td>
-              <a class="btn btn-primary edit" href="../customer/edit/<%=data[i].id%>">Edit</a>                       
-              <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../customers/delete/<%=data[i].id%>">Delete</a>                       
+              <a class="btn btn-primary edit" href="../user/edit/<%=data[i]._id?data[i]._id:data[i].id%>">Edit</a>                       
+              <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../user/delete/<%=data[i]._id?data[i]._id:data[i].id%>">Delete</a>
              </td>
             </tr>
             <% }
                      
              }else{ %>
                  <tr>
-                    <td colspan="3">No user</td>
+                    <td colspan="4" align="center">No user</td>
                  </tr>
               <% } %>    
             

@@ -7,7 +7,7 @@
   <main>
     <div class="card">
       <div class="card-header">
-        <%- include('../components/header', {activeMenu: id?'':'customeAdd',}); %>
+        <%- include('../components/header', {activeMenu: id?'':'userAdd',}); %>
       </div>
       <div class="card-body">
         <div>
@@ -20,7 +20,7 @@
           <% } %>
         </div>
 
-        <form action="<%= id ? '/customer/update/'+id : '/customer/add' %>" method="post" name="customer form">
+        <form action="<%= id ? '/user/update/'+id : '/user/add' %>" method="post" name="user form">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<%= name %>">
@@ -28,10 +28,6 @@
           <div class="form-group">
             <label for="email">Email address</label>
             <input type="email" class="form-control" id="email" name="email" idaria-describedby="emailHelp" value="<%= email %>" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-primary">Save</button>
         </form>

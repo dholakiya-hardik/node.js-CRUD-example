@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const connection  = require('./helper/dbConnection');
-const customerController  = require('./controllers/customer');
+// const userController  = require('./controllers/mysql.user');
+const userController  = require('./controllers/mongoose.user');
 
 router.get('/', function(req, res){ res.render('home')}) 
   
-router.get('/customer/list', customerController.getCustomerList); 
-router.get('/customer/add', customerController.createCustomer)
-router.post('/customer/add', customerController.saveCustomer)
-router.get('/customer/edit/(:id)', customerController.editCustomer)
-router.post('/customer/update/:id', customerController.updateCustomer)
-router.get('/customer/delete/(:id)', customerController.deleteCustomer)
+router.get('/user/list', userController.getUserList); 
+router.get('/user/add', userController.createUser)
+router.post('/user/add', userController.saveUser)
+router.get('/user/edit/(:id)', userController.editUser)
+router.post('/user/update/:id', userController.updateUser)
+router.get('/user/delete/(:id)', userController.deleteUser)
 
 module.exports = router;

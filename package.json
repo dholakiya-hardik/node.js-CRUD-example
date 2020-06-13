@@ -18,6 +18,8 @@
     "express-validator": "^6.1.1",
     "http-errors": "^1.7.3",
     "method-override": "^3.0.0",
+    "mongodb": "^3.5.6",
+    "mongoose": "^5.9.10",
     "morgan": "^1.9.1",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.1"
